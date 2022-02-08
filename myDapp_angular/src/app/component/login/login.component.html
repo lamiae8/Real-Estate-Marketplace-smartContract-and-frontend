@@ -1,0 +1,98 @@
+  <!-- start page title area -->
+  <div class="rn-breadcrumb-inner ptb--30">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <h5 class="title text-center text-md-start">Nuron Login</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-list">
+                    <li class="item"><a href="index.html">Home</a></li>
+                    <li class="separator"><i class="feather-chevron-right"></i></li>
+                    <li class="item current">Nuron Login</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page title area -->
+
+<!-- login form -->
+<div class="login-area rn-section-gapTop">
+    <div class="container">
+        <div class="row" style="margin-left:200px">
+            <div class=" offset-2 col-lg-4 col-md-6 ml_md--0 ml_sm--0 col-sm-12">
+                <div class="form-wrapper-one">
+                    <h4>Login</h4>
+                    <form
+                    *ngIf="!isLoggedIn"
+                    name="form"
+                    (ngSubmit)="f.form.valid && onSubmit()"
+                    #f="ngForm"
+                    novalidate
+                    >
+                        <div class="mb-5">
+                            <label for="exampleInputEmail1" class="form-label">username</label>
+                            <input type="text" id="exampleInputEmail1"
+                            class="form-control"
+                            name="username"
+                            [(ngModel)]="form.username"
+                            required
+                            #username="ngModel"
+                          />
+
+                            <div
+                            class="alert alert-danger"
+                            role="alert"
+                            *ngIf="username.errors && f.submitted"
+                          >
+                            Email is required!
+                          </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" id="exampleInputPassword1"
+                            class="form-control"
+                            name="password"
+                            [(ngModel)]="form.password"
+                            required
+                            minlength="6"
+                            #password="ngModel"
+                            >
+                            <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="password.errors && f.submitted"
+                                >
+                                <div *ngIf="password.errors['required']">Password is required</div>
+                                <div *ngIf="password.errors['minlength']">
+                                    Password must be at least 6 characters
+                                </div>
+                                </div>
+                        </div>
+                        <div class="mb-5 rn-check-box">
+                            <input type="checkbox" class="rn-check-box-input" id="exampleCheck1">
+                            <label class="rn-check-box-label" for="exampleCheck1">Remember me leter</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr--15">Log In</button>
+                        <!-- <a href="sign-up.html" class="btn btn-primary-alta">Sign Up</a> -->
+                        
+                        <div
+                        class="alert alert-danger"
+                        role="alert"
+                        *ngIf="f.submitted && isLoginFailed"
+                      >
+                        Login failed: {{ errorMessage }}
+                      </div>
+                    </form>
+                    <div class="alert alert-success" *ngIf="isLoggedIn">
+                        Logged in as {{ roles }}.
+                      </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<!-- login form end -->

@@ -1,0 +1,5 @@
+.grid_product{
+    display: grid;
+   justify-items: center;
+    grid-template-columns: repeat(3,33.33%);
+}

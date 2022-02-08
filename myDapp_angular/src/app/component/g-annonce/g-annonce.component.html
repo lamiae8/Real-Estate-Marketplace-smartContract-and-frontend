@@ -1,0 +1,282 @@
+<!--
+<div data-sal-delay="600" data-sal-duration="800" class="grid-metro-item cat--5 cat--4" *ngFor="let re of prods">
+    
+    <app-product [title]="re.title" [label]="re.label" [location]="re.location" ></app-product>
+
+</div>
+-->
+
+  <!-- start page title area -->
+  <div class="rn-breadcrumb-inner ptb--30">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <h5 class="title text-center text-md-start">Explore Style List</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-list">
+                    <li class="item"><a href="index.html">Home</a></li>
+                    <li class="separator"><i class="feather-chevron-right"></i></li>
+                    <li class="item current">Explore Style List</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page title area -->
+
+
+
+
+
+<!-- Start Tab Product list style area -->
+<div class="rn-product-area rn-section-gapTop">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8 custom-product-col">
+                <h2 class="text-left mb--50">OUR All Transactios</h2>
+                <nav class="product-tab-nav">
+                    <div class="nav" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">All Requests</button>
+                        <button (click)="newestRequests()" class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Newest Request</button>
+                    </div>
+                </nav>
+                <div></div>
+                <div></div>
+                <div *ngFor="let re of prods" class="tab-content " id="nav-tabContent">
+                    <div *ngIf="re.verified==false" class="tab-pane  lg-product_tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                      
+                          
+                          <!-- start single product -->
+                          <div class="lg-product-wrapper">
+                            <div class="inner">
+                                <div class="lg-left-content">
+                                    <a href="product-details.html" class="thumbnail">
+                                        <img src={{re.images[0]}} style="width: 251px; height: 251px;" alt="_Portfolio">
+                                    </a>
+                                    <div class="read-content">
+                                        <div class="product-share-wrapper">
+                                            <!-- all bids -->
+                                            <div class="profile-share">
+                                                <a href="author.html" class="avatar" data-tooltip="Shaikh" tabindex="0"><img src="assets/myImages/man.png" alt="Nft_Profile"></a>
+                                                &nbsp;&nbsp;
+                                                <a class="more-author-text" href="#" tabindex="0">{{re.userId}} </a>
+                                            </div>
+                                            <!-- all bids End-->
+                                            <div class="last-bid">{{re.title}}</div>
+                                        </div>
+                                        <a href="product-details.html">
+                                            <h6 class="title">{{re.label}}</h6> 
+                                        </a>
+                                        <span class="latest-bid">{{re.location}}</span>
+                                        <div class="share-wrapper d-flex">
+                                            <!-- react area -->
+                                            <div class="react-area mr--15">
+                                                <svg viewBox="0 0 17 16" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN kBvkOu">
+                                                    <path d="M8.2112 14L12.1056 9.69231L14.1853 7.39185C15.2497 6.21455 15.3683 4.46116 14.4723 3.15121V3.15121C13.3207 1.46757 10.9637 1.15351 9.41139 2.47685L8.2112 3.5L6.95566 2.42966C5.40738 1.10976 3.06841 1.3603 1.83482 2.97819V2.97819C0.777858 4.36443 0.885104 6.31329 2.08779 7.57518L8.2112 14Z" stroke="currentColor" stroke-width="2"></path>
+                                                </svg>
+                                                <span class="number">65</span>
+                                            </div>
+                                            <!-- end -->
+                                            <!-- share area -->
+                                            <div class="share-btn share-btn-activation dropdown">
+                                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
+                                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                                    </svg>
+                                                </button>
+                                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal" tabindex="0">
+                                                        Share
+                                                    </button>
+                                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal" tabindex="0">
+                                                        Report
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- sharea End -->
+                                        </div>
+                                    </div>
+                                </div> 
+                                <button (click)="reject(re.id)" [value]='re.id' type="button " class="btn btn-primary-alta " style="background-color: rgb(199, 0, 0);" data-bs-toggle="modal" data-bs-target="#placebidModal">Reject</button>
+                                <button (click)="verify(re.id)"  [value]='re.id' type="button" class="btn btn-primary-alta " style="background-color: rgb(0, 133, 0);"data-bs-toggle="modal" data-bs-target="#placebidModal">Verify</button>
+
+                            </div>
+                        </div>
+                        <!-- End single product -->
+                   
+                   
+                    </div>
+
+
+
+                    <div *ngFor="let newRq of newReq" class="tab-pane lg-product_tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <!-- start single product -->
+                        <div class="lg-product-wrapper">
+                            <div class="inner">
+                                <div class="lg-left-content">
+                                    <a href="product-details.html" class="thumbnail">
+                                        <img src="assets/myImages/man.png" alt="Nft_Portfolio">
+                                    </a>
+                                    <div class="read-content">
+                                        <div class="product-share-wrapper">
+                                            <!-- all bids -->
+                                            <div class="profile-share">
+                                                <a href="author.html" class="avatar" data-tooltip="Farik Shaikh" tabindex="0"><img src="assets/myImages/man.png" alt="_Profile"></a>
+                                                <a href="#" class="avatar"><img data-tooltip="Shaikh" src="assets/myImages/man.png" alt="Nft_Profile"></a>
+                                                <a href="author.html" class="avatar" data-tooltip="Farik" tabindex="0"><img src="assets/myImages/man.png" alt="_Profile"></a>
+                                                <a class="more-author-text" href="#" tabindex="0">{{newRq.userId}}</a>
+                                            </div>
+                                            <!-- all bids End-->
+                                            <div class="last-bid">{{newRq.title}}</div>
+                                        </div>
+                                        <a href="product-details.html">
+                                            <h6 class="title">{{newRq.label}}</h6>
+                                        </a>
+                                        <span class="latest-bid">{{newRq.location}}</span>
+                                        <div class="share-wrapper d-flex">
+                                            <!-- react area -->
+                                            <div class="react-area mr--15">
+                                                <svg viewBox="0 0 17 16" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN kBvkOu">
+                                                    <path d="M8.2112 14L12.1056 9.69231L14.1853 7.39185C15.2497 6.21455 15.3683 4.46116 14.4723 3.15121V3.15121C13.3207 1.46757 10.9637 1.15351 9.41139 2.47685L8.2112 3.5L6.95566 2.42966C5.40738 1.10976 3.06841 1.3603 1.83482 2.97819V2.97819C0.777858 4.36443 0.885104 6.31329 2.08779 7.57518L8.2112 14Z" stroke="currentColor" stroke-width="2"></path>
+                                                </svg>
+                                                <span class="number">65</span>
+                                            </div>
+                                            <!-- end -->
+                                            <!-- share area -->
+                                            <div class="share-btn share-btn-activation dropdown">
+                                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
+                                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                                    </svg>
+                                                </button>
+                                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal" tabindex="0">
+                                                        Share
+                                                    </button>
+                                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal" tabindex="0">
+                                                        Report
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- sharea End -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <button (click)="reject(newRq.id)" [value]='newRq.id' type="button " class="btn btn-primary-alta " style="background-color: rgb(199, 0, 0);" data-bs-toggle="modal" data-bs-target="#placebidModal">Reject</button>
+                                <button (click)="verify(newRq.id)"   type="button" class="btn btn-primary-alta " style="background-color: rgb(0, 133, 0);"data-bs-toggle="modal" data-bs-target="#placebidModal">Verify</button>
+                            </div>
+                        </div>
+                        <!-- End single product -->
+                       
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            <div class="col-lg-4 custom-product-col">
+                <div class="header-right-fixed position-sticky product-notify-wrapper rbt-sticky-top-adjust-four mt--95 mt_md--20 mt_sm--15">
+                    <!-- notificatio area -->
+                    <div class="rn-notification-area right-fix-notice product-notification" >
+                        <div class="h--100">
+                            <div class="notice-heading">
+                                <h4>Notification</h4>
+                                <div class="nice-select" tabindex="0"><span class="current">Newest</span>
+                                    <ul class="list">
+                                        <li data-value="Potato" data-display="Newest" class="option selected">Newest</li>
+                                        <li data-value="1" class="option">Tranding</li>
+                                        <li data-value="2" class="option">Saved</li>
+                                        <li data-value="4" class="option">Delated</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rn-notification-wrapper" *ngFor="let nr of prods">
+
+                            <!-- start single notification -->
+                            <div class="single-notice">
+                                <div class="thumbnail">
+                                    <a href="connect.html"><img src="assets/myImages/icons8-notification-64.png" alt="Nft_Profile"></a>
+                                </div>
+                                <div class="content-wrapper">
+                                    <a href="connect.html">
+                                        <h6 class="title"> {{nr.title}}</h6>
+                                    </a>
+                                    <p>{{nr.location}}</p>
+                                    <div class="notice-time">
+                                        <span>{{nr.userId}}</span>
+                                        
+                                    </div>
+                                    <a href="connect.html" class="btn btn-primary-alta">Check Out</a>
+                                </div>
+                            </div>
+                            <!-- End single notification -->
+                           
+                        </div>
+                    </div>
+                    <!-- notificatio area End -->
+
+                    <!-- start creators area -->
+                    <div class="rn-creators-area right-fix-notice creators mt--30">
+                        <div class="h--100">
+                            <div class="notice-heading">
+                                <h4>
+                                    Top Users
+                                </h4>
+                                <div class="nice-select" tabindex="0"><span class="current">Today</span>
+                                    <ul class="list">
+                                        <li data-value="Potato" data-display="Today" class="option selected">Today</li>
+                                        <li data-value="1" class="option">7 Day's</li>
+                                        <li data-value="2" class="option">30 Days</li>
+                                        <li data-value="4" class="option">6 Month's</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rn-notification-wrapper creators">
+                            <!-- single authore -->
+                            <div class="top-seller-inner-one" *ngFor="let nr of prods">
+                                <div class="top-seller-wrapper">
+                                    <div class="thumbnail varified">
+                                        <a href="#"><img src="assets/myImages/man.png" alt="Nft_Profile"></a>
+                                    </div>
+                                    <div class="top-seller-content" >
+                                        <a href="#">
+                                            <h6 class="name">{{nr.userId}}</h6>
+                                        </a>
+                                        <span class="count-number">
+                                        {{nr.sellerAddress}}
+                                    </span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-primary-alta">Follow</a>
+                            </div>
+                            <!-- single authore end -->
+                        
+                        </div>
+                    </div>
+                    <!-- End creators area -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Tab Product list style area -->

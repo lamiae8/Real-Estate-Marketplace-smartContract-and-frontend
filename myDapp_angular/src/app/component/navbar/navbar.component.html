@@ -1,0 +1,124 @@
+ <!-- Authenticated {{ _services/authenticationService | async }}  -->
+<header class="rn-header haeder-default black-logo-version header--fixed header--sticky">
+
+    <div class="container">
+        <div class="header-inner">
+            <div class="header-left">
+                <div class="logo-thumbnail logo-custom-css">
+                    <a class="logo-light" href="/"><img src="assets/myImages/lek.png" alt="LM-logo"><strong > L&M</strong></a>
+                    <a class="logo-dark" href="/"><img src="assets/myImages/lek.png" alt="LM-logo"><strong style="color: gray;"> L&M</strong></a>
+                </div>
+                <div class="mainmenu-wrapper">
+                    <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
+                        <!-- Start Mainmanu Nav -->
+                        <ul class="mainmenu">
+                            <li >
+                                <a *ngIf=" !showAdminBoard" class="its_new" href="/">Home</a>
+                               
+                            </li>
+                           
+                            <li >
+                                    <a routerLink="explore" >Explore <i class=" its_new"></i></a>
+                                  
+                            </li>
+                          
+                              
+                          
+                                
+                          
+                            
+                               
+                                               
+                                <li ><a *ngIf="!isLoggedIn" routerLink="register">Registration <i data-feather="user-plus"></i></a></li>
+                             
+                               <li ><a *ngIf="isLoggedIn && showAdminBoard" routerLink="transactions">Transactions <i data-feather="user-plus"></i></a></li>        
+                               <li ><a *ngIf="isLoggedIn && showAdminBoard" routerLink="gAnnonce">Gestion Des Annonces <i data-feather="user-plus"></i></a></li>        
+
+                              <!-- <li ><a *ngIf="isLoggedIn && showAdminBoard" routerLink="gCategory">Gestion Des category <i data-feather="user-plus"></i></a></li>   -->     
+
+                           
+                        </ul>
+                        <!-- End Mainmanu Nav -->
+                    </nav>
+                </div><div> 
+                <a  *ngIf="isLoggedIn && showUserBoard" class=" icon-box btn btn-primary-alta btn-small" routerLink="create" >create</a>
+                              
+                          </div> 
+            </div>
+              
+            <div class="header-right">
+                <div class="setting-option d-none d-lg-block">
+                    <form class="search-form-wrapper" action="#">
+                        <input type="search" placeholder="Search Here" aria-label="Search">
+                        <div class="search-icon">
+                            <button><i class="feather-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="setting-option rn-icon-list d-block d-lg-none">
+                    <div class="icon-box search-mobile-icon">
+                        <button><i class="feather-search"></i></button>
+                    </div>
+                    <form id="header-search-1" action="#" method="GET" class="large-mobile-blog-search">
+                        <div class="rn-search-mobile form-group">
+                            <button type="submit" class="search-button"><i class="feather-search"></i></button>
+                            <input type="text" placeholder="Search ...">
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="setting-option header-btn" *ngIf="!isLoggedIn">
+                    <div class="icon-box">
+                        <a class="btn btn-primary-alta btn-small" routerLink="login" >Log In</a>
+                    </div>
+                    
+                   
+                </div>
+                <div class="setting-option rn-icon-list user-account" *ngIf="isLoggedIn " >
+                    <div class="icon-box">
+                        <a  (click)= "openMetaMask()"> <img src="assets/images/icons/meta.jpeg" >   </a>
+                    </div>
+                </div>
+               
+                    
+               
+                <div class="setting-option rn-icon-list user-account" *ngIf="isLoggedIn">
+                    <div class="icon-box">
+                        <a routerLink="profile"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+                        <div class="rn-dropdown">
+                           
+                           
+                           
+                            <ul class="list-inner" >
+                                <li><a routerLink="profile">My Profile</a></li>
+                                <li><a routerLink="login" (click)="logout()">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-option mobile-menu-bar d-block d-xl-none">
+                    <div class="hamberger">
+                        <button class="hamberger-button">
+                            <i class="feather-menu"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="my_switcher" class="setting-option my_switcher">
+                    <ul>
+                        <li>
+                            <a href="javascript: void(0);" data-theme="light" class="setColor light">
+                                <img src="assets/images/icons/sun-01.svg" alt="Sun images">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
+                                <img src="assets/images/icons/vector.svg" alt="Vector Images">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
